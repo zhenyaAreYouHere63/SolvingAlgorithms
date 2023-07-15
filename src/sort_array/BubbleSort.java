@@ -4,27 +4,27 @@ import static java.lang.System.nanoTime;
 
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] randomNumber = new int[200];
-        RandomElement.createArrayRandomNumber(randomNumber);
-        System.out.println("Print out random elements:");
-        for (int number : randomNumber) {
+        int[] randomNumbers = new int[200];
+        RandomNumber.createArrayRandomNumbers(randomNumbers);
+        System.out.println("Print out random numbers:");
+        for (int number : randomNumbers) {
 
             System.out.println(number);
         }
         System.out.println("\n");
         long beginBubbleSort = nanoTime();
-        getBubbleSortArray(randomNumber);
+        int[] sortNumbers = getBubbleSort(randomNumbers);
         long finishBubbleSort = nanoTime();
         long countTimeBubbleSort = finishBubbleSort - beginBubbleSort;
         System.out.println("The sorting process took: " + countTimeBubbleSort + " nanoseconds");
         System.out.println("\n");
-        System.out.println("Print out sort elements: ");
-        for (int sortNumber : randomNumber) {
+        System.out.println("Print out sort numbers:");
+        for (int sortNumber : sortNumbers) {
             System.out.println(sortNumber);
         }
     }
 
-    public static void getBubbleSortArray(int[] array) {
+    public static int[] getBubbleSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
                 if (array[j] > array[i]) {
@@ -34,5 +34,6 @@ public class BubbleSort {
                 }
             }
         }
+        return array;
     }
 }
