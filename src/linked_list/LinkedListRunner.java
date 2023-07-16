@@ -4,11 +4,11 @@ public class LinkedListRunner
 {
     public static void main(String[] args) {
         RelatedList relatedList = new RelatedList();
-        relatedList.insertHead(6);
-        relatedList.insertTail(11);
-        relatedList.insertInGivenIndex(2, 7);
-        relatedList.deleteTail();
         relatedList.deleteHead();
-        relatedList.getListElements();
+        relatedList.insertHead(12);
+        relatedList.insertTail(34);
+        relatedList.insertInGivenIndex(1,1);
+        relatedList.deleteHead();
+        relatedList.deleteTail();
     }
 }
