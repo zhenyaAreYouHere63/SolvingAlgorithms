@@ -2,6 +2,7 @@ package sort_array;
 
 public class InsertSort {
 
+
     public static void main(String[] args) {
         int[] randomNumbers = new int[200];
         RandomNumber.createArrayRandomNumbers(randomNumbers);

@@ -7,7 +7,6 @@ public class RelatedList {
     public RelatedList() {
     }
 
-
     public void insertHead(int data) {
         Node node = new Node(data);
         if (head == null) {
@@ -59,6 +58,7 @@ public class RelatedList {
 
     public void deleteHead() {
         if (head == null) {
+            System.out.println("The list is empty");
             return;
         } else {
             Node temporary = head;
@@ -69,6 +69,7 @@ public class RelatedList {
 
     public void deleteTail() {
         if (tail == null) {
+            System.out.println("The list is empty");
             return;
         } else {
             Node temporary = tail;
@@ -79,6 +80,7 @@ public class RelatedList {
 
     public void deleteValueGivenIndex(int index) {
         if (head == null) {
+            System.out.println("The list is empty");
             return;
         } else {
             Node temporary = head;
@@ -93,8 +95,8 @@ public class RelatedList {
     public void getNodeElement(int index) {
         int number = 0;
         if (head == null) {
-            System.out.println("Not values in the list");
-            ;
+            System.out.println("The list is empty");
+            return;
         } else {
             Node temporary = head;
             for (int i = 0; i <= index; i++) {

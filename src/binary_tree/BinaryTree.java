@@ -2,6 +2,7 @@ package binary_tree;
 import java.util.Stack;
 
 public class BinaryTree {
+
     private static Node root;
 
     public BinaryTree() {

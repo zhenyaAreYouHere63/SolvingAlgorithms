@@ -1,6 +1,7 @@
 package binary_tree;
 
 public class Node {
+
     private Integer value;
     private Node left;
     private Node right;

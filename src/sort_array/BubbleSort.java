@@ -1,8 +1,8 @@
 package sort_array;
-
 import static java.lang.System.nanoTime;
 
 public class BubbleSort {
+
     public static void main(String[] args) {
         int[] randomNumbers = new int[200];
         RandomNumber.createArrayRandomNumbers(randomNumbers);
