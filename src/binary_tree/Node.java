@@ -2,22 +2,22 @@ package binary_tree;
 
 public class Node {
 
-    private Integer value;
+    private int value;
     private Node left;
     private Node right;
 
-    public Node(Integer value) {
+    public Node(int value) {
         this.value = value;
         left = null;
         right = null;
     }
 
 
-    public Integer getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(int value) {
         this.value = value;
     }
 

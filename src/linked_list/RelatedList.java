@@ -7,6 +7,28 @@ public class RelatedList {
     public RelatedList() {
     }
 
+    public void addElement(int data) {
+        Node node = new Node(data);
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else if (head.getNext() == null) {
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(null);
+            tail = node;
+        } else {
+            Node temporary = head;
+            while (temporary.getNext() != null) {
+                temporary = temporary.getNext();
+            }
+            temporary.setNext(node);
+            node.setPrev(temporary);
+            node.setNext(null);
+            tail = node;
+        }
+    }
+
     public void insertHead(int data) {
         Node node = new Node(data);
         if (head == null) {
@@ -37,7 +59,7 @@ public class RelatedList {
         }
     }
 
-    public void insertInGivenIndex(int index, int data) {
+    public void insertGivenIndex(int index, int data) {
         Node node = new Node(data);
         if (head == null) {
             head = node;
@@ -92,7 +114,7 @@ public class RelatedList {
         }
     }
 
-    public void getNodeElement(int index) {
+    public void getElement(int index) {
         int number = 0;
         if (head == null) {
             System.out.println("The list is empty");
@@ -106,14 +128,14 @@ public class RelatedList {
         }
     }
 
-    public void getListElements() {
-        StringBuilder result = new StringBuilder("[ ");
+    public void getElements() {
+        StringBuilder result = new StringBuilder("[");
         Node temp = head;
         while (temp.getNext() != null) {
             result.append(temp.getData() + ", ");
             temp = temp.getNext();
         }
-        result.append(temp.getData() + "] ");
+        result.append(temp.getData() + "]");
         System.out.println(result);
     }
 }

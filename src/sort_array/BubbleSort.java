@@ -1,11 +1,13 @@
 package sort_array;
+
 import static java.lang.System.nanoTime;
 
 public class BubbleSort {
 
     public static void main(String[] args) {
         int[] randomNumbers = new int[200];
-        RandomNumber.createArrayRandomNumbers(randomNumbers);
+        RandomNumber randomNumber = new RandomNumber();
+        randomNumber.createArrayRandomNumbers(randomNumbers);
         System.out.println("Print out random numbers:");
         for (int number : randomNumbers) {
 
@@ -15,12 +17,11 @@ public class BubbleSort {
         long beginBubbleSort = nanoTime();
         int[] sortNumbers = getBubbleSort(randomNumbers);
         long finishBubbleSort = nanoTime();
-        long countTimeBubbleSort = finishBubbleSort - beginBubbleSort;
-        System.out.println("The sorting process took: " + countTimeBubbleSort + " nanoseconds");
+        System.out.println("The sorting process took: " + (finishBubbleSort - beginBubbleSort) + " nanoseconds");
         System.out.println("\n");
         System.out.println("Print out sort numbers:");
-        for (int sortNumber : sortNumbers) {
-            System.out.println(sortNumber);
+        for (int number : sortNumbers) {
+            System.out.println(number);
         }
     }
 

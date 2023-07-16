@@ -19,8 +19,6 @@ public class BinaryTree {
         binaryTree.addNodeToTree(7);
         binaryTree.addNodeToTree(6);
         binaryTree.addNodeToTree(9);
-        binaryTree.addNodeToTree(8);
-
         binaryTree.printTree();
     }
 
