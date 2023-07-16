@@ -1,97 +1,90 @@
 package binary_tree;
+
 import java.util.Stack;
 
-public class BinaryTree {
+public class BinaryTree
+{
     private static Node root;
 
-    public BinaryTree() {
+    public BinaryTree()
+    {
         root = null;
     }
 
-    public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.addNodeToTree( 5);
-        binaryTree.addNodeToTree(1);
-        binaryTree.addNodeToTree(3);
-        binaryTree.addNodeToTree(4);
-        binaryTree.addNodeToTree(2);
-        binaryTree.addNodeToTree(7);
-        binaryTree.addNodeToTree(6);
-        binaryTree.addNodeToTree(9);
-        binaryTree.addNodeToTree(8);
+    public static void main(String[] args)
+    {
+        root = new Node(1);
+        Node second = new Node(null);
+        Node third = new Node(22);
+        Node fourth = new Node(54);
+        Node fifth = new Node(35);
+        Node six = new Node(23);
+        Node seventh = new Node(45);
 
-        binaryTree.printTree();
-    }
+        root.setLeft(second);
+        root.setRight(third);
 
-    public void addNodeToTree(int value) {
-        Node newNode = new Node(value);
-        if (root == null) {
-            root = newNode;
-        } else {
-            Node currentNode = root;
-            Node parent;
-            while (true) {
-                parent = currentNode;
-                if (value < currentNode.getValue()) {
-                    currentNode = currentNode.getLeft();
-                    if (currentNode == null) {
-                        parent.setLeft(newNode);
-                        return;
-                    }
-                } else {
-                    currentNode = currentNode.getRight();
-                    if (currentNode == null) {
-                        parent.setRight(newNode);
-                        return;
-                    }
-                }
-            }
-        }
+        second.setLeft(fourth);
+        second.setRight(fifth);
+
+        third.setLeft(six);
+        third.setRight(seventh);
+
+        printTree();
     }
 
 
-    public void printTree() {
+    public static void printTree()
+    {
         Stack<Node> globalStack = new Stack<Node>();
         globalStack.push(root);
-        int gaps = 72;
+        int gaps = 32;
 
         boolean isRowEmpty = false;
         String separator = "--------------------------------------------------------------------------------";
         System.out.println(separator);
-        while (!isRowEmpty) {
+        while (!isRowEmpty)
+        {
             Stack<Node> localStack = new Stack<>();
             isRowEmpty = true;
             for (int i = 0; i < gaps; i++) {
                 System.out.print(' ');
             }
-            while (!globalStack.isEmpty()) {
-                Node temp = (Node) globalStack.pop();
-                if (temp != null) {
-                    System.out.print(temp.getValue());
-                    localStack.push(temp.getLeft());
-                    localStack.push(temp.getRight());
-                    if (temp.getLeft() != null || temp.getRight() != null) {
-                        isRowEmpty = false;
+                while (!globalStack.isEmpty())
+                {
+                    Node temp = (Node) globalStack.pop();
+                    if (temp != null)
+                    {
+                        System.out.print(temp.getValue());
+                        localStack.push(temp.getLeft());
+                        localStack.push(temp.getRight());
+                        if (temp.getLeft() != null || temp.getRight() != null)
+                        {
+                            isRowEmpty = false;
+                        }
                     }
-                } else {
-                    System.out.print("_");
-                    localStack.push(null);
-                    localStack.push(null);
+                    else
+                    {
+                        System.out.print("_");
+                        localStack.push(null);
+                        localStack.push(null);
+                    }
+                    for (int j = 0; j < gaps * 2 - 2; j++) {
+                        System.out.print(' ');
+                    }
                 }
-                for (int j = 0; j < gaps * 2 - 2; j++) {
-                    System.out.print(' ');
+                System.out.println();
+                gaps /= 2;
+                while (!localStack.isEmpty())
+                {
+                    globalStack.push(localStack.pop());
                 }
             }
-            System.out.println();
-            gaps /= 2;
-            while (!localStack.isEmpty()) {
-                globalStack.push(localStack.pop());
-            }
-        }
-        System.out.println(separator);
+            System.out.println(separator);
     }
-
-    public static void sortTree() {
+//                            It's not all
+    public static void sortTree()
+    {
 
     }
 }
