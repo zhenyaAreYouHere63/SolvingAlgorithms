@@ -105,13 +105,13 @@ public class RelatedList {
     }
 
     public void getListElements() {
-        StringBuilder result = new StringBuilder("[ ");
+        StringBuilder result = new StringBuilder("[");
         Node temp = head;
         while (temp.getNext() != null) {
             result.append(temp.getData() + ", ");
             temp = temp.getNext();
         }
-        result.append(temp.getData() + "] ");
+        result.append(temp.getData() + "]");
         System.out.println(result);
     }
 }
