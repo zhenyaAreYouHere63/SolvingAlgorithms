@@ -1,4 +1,4 @@
-package binary_tree;
+package binary;
 
 public class Node {
 
@@ -8,10 +8,7 @@ public class Node {
 
     public Node(int value) {
         this.value = value;
-        left = null;
-        right = null;
     }
-
 
     public int getValue() {
         return value;
@@ -20,7 +17,6 @@ public class Node {
     public void setValue(int value) {
         this.value = value;
     }
-
 
     public Node getLeft() {
         return left;
